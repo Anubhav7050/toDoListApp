@@ -1,0 +1,12 @@
+<div class="todo-container">
+    <h1>To-Do List App</h1>
+      <input type="text" placeholder="Add new task" [(ngModel)]="input" required/>
+      <button type="submit" (click)="addItem()">{{buttonText}}</button>
+    <div *ngFor="let item of taskArray let i=index">
+      <ul id="todo-list">{{item}}</ul>
+      <button (click)="deleteItem(i)">🗑️</button>
+      <button (click)="editItem(item)" >
+        <img src="../assets/edit.png" style="height: 17px;">
+      </button>
+    </div>
+  </div>
