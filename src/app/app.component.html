@@ -6,6 +6,8 @@
   <div *ngFor="let item of taskArray let i=index">
     <ul id="todo-list">{{item}}</ul>
     <button (click)="deleteItem(i)">🗑️</button>
-    <button (click)="editItem(item)">Edit icon</button>
+    <button (click)="editItem(item)" >
+      <img src="../assets/edit.png" style="height: 17px;">
+    </button>
   </div>
 </div>
