@@ -16,15 +16,20 @@ export class ToDoListComponent {
   input: string="";
   taskArray: any[]=[];
   addItem(){
-    if (this.buttonText==="ADD") {
-      this.taskArray.unshift(this.input);
-    }else{
-      this.taskArray[this.taskArray.indexOf(this.editedText)]=this.input;
+    if(this.input !=""){
+      if (this.buttonText==="ADD") {
+        this.taskArray.unshift(this.input);
+      }else{
+        this.taskArray[this.taskArray.indexOf(this.editedText)]=this.input;
+      }
+      this.input="";
     }
-    this.input="";
   }
   deleteItem(i: any){
-    this.taskArray.splice(i,1);
+    const confirmDelete = confirm('Are you sure you want to delete this task!')
+    if (confirmDelete) {
+      this.taskArray.splice(i, 1);
+    }
   }
   editItem(item:string){
     this.input=item;
