@@ -21,6 +21,11 @@ constructor(private route: Router){
   
 }
 
+  ngOnInit(): void {
+    console.log();
+    let data:any = localStorage.getItem('cachedData')
+    this.taskArray = JSON.parse(data)
+  }
   addItem(){
     if(this.input !=""){
       if (this.buttonText==="ADD") {
