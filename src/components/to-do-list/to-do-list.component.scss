@@ -7,3 +7,8 @@
 .edit-btn{
     cursor: pointer;
 }
+#todo-list{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

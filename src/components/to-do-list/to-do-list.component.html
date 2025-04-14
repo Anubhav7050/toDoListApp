@@ -2,7 +2,7 @@
     <h1>To-Do List App</h1>
       <div class="flex-btn">
         <div>
-          <input type="text" placeholder="Add new task" [(ngModel)]="input" required/>
+          <input type="text" placeholder="Add new task" (ngModelChange)="inputValueChanged($event)" [(ngModel)]="input" required/>
         </div>
         <div>
           <button type="submit" (click)="addItem()">{{buttonText}}</button>
