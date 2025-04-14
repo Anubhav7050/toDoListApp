@@ -1,12 +1,20 @@
 <div class="todo-container">
     <h1>To-Do List App</h1>
-      <input type="text" placeholder="Add new task" [(ngModel)]="input" required/>
-      <button type="submit" (click)="addItem()">{{buttonText}}</button>
-    <div *ngFor="let item of taskArray let i=index">
+      <div class="flex-btn">
+        <div>
+          <input type="text" placeholder="Add new task" [(ngModel)]="input" required/>
+        </div>
+        <div>
+          <button type="submit" (click)="addItem()">{{buttonText}}</button>
+        </div>
+      </div>
+    <div *ngFor="let item of taskArray let i=index" style="display: flex;justify-content: space-between;align-items: center;margin-top: 5px;">
       <ul id="todo-list">{{item}}</ul>
-      <button (click)="deleteItem(i)">🗑️</button>
-      <button (click)="editItem(item)" >
+     <div style="display: flex;gap: 10px;">
+    <span (click)="deleteItem(i)" class="del-btn">🗑️</span>
+      <span (click)="editItem(item)" class="edit-btn">
         <img src="../assets/edit.png" style="height: 17px;">
-      </button>
+      </span>
+     </div>
     </div>
   </div>
