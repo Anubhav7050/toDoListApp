@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-to-do-list',
@@ -15,10 +16,16 @@ export class ToDoListComponent {
   isEditButtonShow:boolean= false;
   input: string="";
   taskArray: any[]=[];
+
+constructor(private route: Router){
+  
+}
+
   addItem(){
     if(this.input !=""){
       if (this.buttonText==="ADD") {
         this.taskArray.unshift(this.input);
+        this.route.navigate(["/add-item"])
       }else{
         this.taskArray[this.taskArray.indexOf(this.editedText)]=this.input;
       }
